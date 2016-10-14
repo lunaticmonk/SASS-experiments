@@ -1,0 +1,12 @@
+@mixin moveTo($x,$y){
+	animation-name : test;
+
+@keyframes test{
+	from {
+
+	}
+	to {
+		transform: translate($y,$x);
+	}
+}
+}

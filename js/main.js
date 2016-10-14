@@ -10,9 +10,5 @@
 		about_btn.classList.toggle('move-about');
 		contribute_btn.classList.toggle('move-contribute');
 		idk_btn.classList.toggle('move-idk');
-
-		// menu_btn.addEventListener('mouseleave',function(){
-		// 	home_btn.classList.add('rev-menu');
-		// });
 	});
 })();

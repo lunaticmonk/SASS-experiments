@@ -1,12 +1,83 @@
-@mixin moveTo($x,$y){
+//forward animations
+@mixin moveHome($x,$y){
 	animation-name : test;
+	-webkit-animation-fill-mode: forwards;
 
 @keyframes test{
 	from {
 
 	}
-	to {
+	75% {
 		transform: translate($y,$x);
+	}
+	to {
+		transform: translate(195px,0)
+	}
+}
+}
+
+@mixin moveAbout($x,$y){
+	animation-name : test_b;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+
+@keyframes test_b{
+	from {
+
+	}
+	75% {
+		transform: translate($y,$x);
+	}
+	to {
+		transform: translate(95px,168.2px);
+	}
+}
+}
+
+@mixin moveContribute($x,$y){
+	animation-name : test_c;
+	-webkit-animation-fill-mode: forwards;
+
+@keyframes test_c{
+	from {
+
+	}
+	75% {
+		transform: translate($y,$x);
+	}
+	to {
+		transform : translate(168.2px,95px);
+	}
+}
+}
+
+@mixin moveIdk($x,$y){
+	animation-name : test_d;
+	-webkit-animation-fill-mode: forwards;
+
+@keyframes test_d{
+	from {
+
+	}
+	75% {
+		transform: translate($y,$x);
+	}
+	to {
+		transform : translate(0,195px);
+	}
+}
+}
+
+//reverse animations
+
+@mixin revMenu(){
+	animation-name : reverse;
+	-webkit-animation-fill-mode: forwards;
+
+@keyframes reverse{
+	from {}
+	to {
+		transform: translate();
 	}
 }
 }

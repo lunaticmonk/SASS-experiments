@@ -5,20 +5,23 @@
 @import "partials/layout";
 @import "partials/modules";
 @import "partials/mixins";
-
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
 // button styling
 
 %btn{
 	position: absolute;
-	width: 4em;
-	height: 4em;
+	width: 5em;
+	height: 5em;
 	border-radius : 50%;
 	margin: 5% auto;
 	cursor: pointer;
-	//background-color: #0099ff;
 	text-align : center;
+	line-height: 2em;
 	padding-top : 1.75%;
-	box-shadow: 2px 2px 2px 2px #e3e3e3;
+	box-shadow: 4px 4px 4px 2px #e3e3e3;
+	color: #fff;
+	font-family: Josefin Sans,sans-serif;
+	font-weight: bold;
 }
 .menu-btn{
 	@extend %btn;
@@ -28,34 +31,41 @@
 .home-btn{
 	@extend %btn;
 	background-color: $color-home;
-	//z-index: 9;
+	z-index: 9;
 }
 .about-btn{
 	@extend %btn;
 	background-color: $color-about;
-	//z-index: 8;
+	z-index: 8;
 }
 .contribute-btn{
 	@extend %btn;
 	background-color: $color-contribute;
-	//z-index: 7;
+	z-index: 7;
+}
+.idk-btn{
+	@extend %btn;
+	background-color: $color-idk;
+	z-index: 6;
 }
 
 .move-home{
-	$x : 0;
-	$y : 0;
-	@include moveTo(200px,200px);
-	animation-duration: 5s;
-}
-.move-about{
-	$x : 0;
-	$y : 0;
-	@include moveTo(100px,200px);
-	animation-duration: 4s;
+	@include moveHome(0,200px);
+	animation-duration: .25s;
 }
 .move-contribute{
-	$x : 0;
-	$y : 0;
-	@include moveTo(45px,34px);
-	animation-duration: 2s;
+	@include moveContribute(100px,173.2px);
+	animation-duration: .30s;
+}
+.move-about{
+	@include moveAbout(173.2px,100px);
+	animation-duration: .35s;
+}
+.move-idk{
+	@include moveIdk(200px,0);
+	animation-duration: .40s;
+}
+.rev-menu{
+	@include revMenu();
+	animation-duration: .25s;
 }

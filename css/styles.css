@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
 /* line 17, ../sass/partials/_normalize.scss */
 article,
 aside,
@@ -357,66 +358,117 @@ footer[role="contentinfo"] {
 }
 
 /* line 11, ../sass/styles.scss */
-.menu-btn, .home-btn, .about-btn, .contribute-btn {
+.menu-btn, .home-btn, .about-btn, .contribute-btn, .idk-btn {
   position: absolute;
-  width: 4em;
-  height: 4em;
+  width: 5em;
+  height: 5em;
   border-radius: 50%;
   margin: 5% auto;
   cursor: pointer;
   text-align: center;
+  line-height: 2em;
   padding-top: 1.75%;
-  box-shadow: 2px 2px 2px 2px #e3e3e3;
+  box-shadow: 4px 4px 4px 2px #e3e3e3;
+  color: #fff;
+  font-family: Josefin Sans,sans-serif;
+  font-weight: bold;
 }
 
-/* line 23, ../sass/styles.scss */
+/* line 26, ../sass/styles.scss */
 .menu-btn {
-  background-color: #0099ff;
+  background-color: #E74C3C;
   z-index: 10;
 }
 
-/* line 28, ../sass/styles.scss */
+/* line 31, ../sass/styles.scss */
 .home-btn {
-  background-color: #009999;
+  background-color: #76D7C4;
+  z-index: 9;
 }
 
-/* line 33, ../sass/styles.scss */
+/* line 36, ../sass/styles.scss */
 .about-btn {
-  background-color: #555;
+  background-color: #DAF7A6;
+  z-index: 8;
 }
 
-/* line 38, ../sass/styles.scss */
+/* line 41, ../sass/styles.scss */
 .contribute-btn {
-  background-color: #666;
+  background-color: #D2B4DE;
+  z-index: 7;
 }
 
-/* line 44, ../sass/styles.scss */
+/* line 46, ../sass/styles.scss */
+.idk-btn {
+  background-color: #F4D03F;
+  z-index: 6;
+}
+
+/* line 52, ../sass/styles.scss */
 .move-home {
   animation-name: test;
-  animation-duration: 5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-duration: .25s;
 }
 @keyframes test {
-  to {
-    transform: translate(200px, 200px);
+  75% {
+    transform: translate(200px, 0);
   }
-}
-/* line 50, ../sass/styles.scss */
-.move-about {
-  animation-name: test;
-  animation-duration: 4s;
-}
-@keyframes test {
   to {
-    transform: translate(200px, 100px);
+    transform: translate(195px, 0);
   }
 }
 /* line 56, ../sass/styles.scss */
 .move-contribute {
-  animation-name: test;
-  animation-duration: 2s;
+  animation-name: test_c;
+  -webkit-animation-fill-mode: forwards;
+  animation-duration: .30s;
 }
-@keyframes test {
+@keyframes test_c {
+  75% {
+    transform: translate(173.2px, 100px);
+  }
   to {
-    transform: translate(34px, 45px);
+    transform: translate(168.2px, 95px);
+  }
+}
+/* line 60, ../sass/styles.scss */
+.move-about {
+  animation-name: test_b;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-duration: .35s;
+}
+@keyframes test_b {
+  75% {
+    transform: translate(100px, 173.2px);
+  }
+  to {
+    transform: translate(95px, 168.2px);
+  }
+}
+/* line 64, ../sass/styles.scss */
+.move-idk {
+  animation-name: test_d;
+  -webkit-animation-fill-mode: forwards;
+  animation-duration: .40s;
+}
+@keyframes test_d {
+  75% {
+    transform: translate(0, 200px);
+  }
+  to {
+    transform: translate(0, 195px);
+  }
+}
+/* line 68, ../sass/styles.scss */
+.rev-menu {
+  animation-name: reverse;
+  -webkit-animation-fill-mode: forwards;
+  animation-duration: .25s;
+}
+@keyframes reverse {
+  to {
+    transform: translate();
   }
 }

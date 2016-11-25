@@ -472,3 +472,48 @@ footer[role="contentinfo"] {
     transform: translate();
   }
 }
+/* line 75, ../sass/styles.scss */
+.pink, .blue {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  border-radius: 100%;
+  animation: blue 1.15s ease-in-out infinite;
+}
+
+/* line 84, ../sass/styles.scss */
+.pink {
+  background: #ED4B70;
+  animation-name: pink;
+  transform: translateX(-30px);
+}
+
+/* line 91, ../sass/styles.scss */
+.blue {
+  background: #0163DB;
+  transform: translateX(30px);
+}
+
+/* line 96, ../sass/styles.scss */
+.flickr-pad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+@keyframes pink {
+  50% {
+    transform: translateX(30px);
+  }
+}
+@keyframes blue {
+  0% {
+    z-index: 1;
+  }
+  50% {
+    transform: translateX(-30px);
+  }
+}

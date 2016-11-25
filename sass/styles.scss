@@ -69,3 +69,57 @@
 	@include revMenu();
 	animation-duration: .25s;
 }
+
+//Flickr buttons styling
+
+%dot {
+	position : absolute;
+	width : $WIDTH;
+	height: $HEIGHT;
+	display : inline-block;
+	border-radius : 100%;
+	animation : blue 1.15s ease-in-out infinite;
+}
+
+.pink{
+	@extend %dot;
+	background : $pink;
+	animation-name : pink;
+	transform : translateX(-$DISTANCE);
+}
+
+.blue{
+	@extend %dot;
+	background : $blue;
+	transform : translateX($DISTANCE);
+}
+.flickr-pad{
+	display : flex;
+	justify-content : center;
+	align-items : center;
+	width : 100vw;
+	height: 100vh;
+}
+
+
+
+
+
+
+
+//Animations
+
+@keyframes pink {
+	50%{
+		transform : translateX($DISTANCE);
+	}
+}
+
+@keyframes blue {
+	0% {
+		z-index : 1;
+	}
+	50% {
+		transform : translateX(-$DISTANCE);
+	}
+}

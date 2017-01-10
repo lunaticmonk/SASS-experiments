@@ -82,4 +82,22 @@
 }
 }
 
-//Flickr buttons styling
+//Loader Animations
+
+@mixin move($x1, $y1, $x2, $y2, $x3, $y3, $x4, $y4){
+	@keyframes move{
+		25%{
+			transform : translate($x1, $y1);
+		}
+		50%{
+			transform: translate($x2, $y2);
+		}
+		75%{
+			transform : translate($x3, $y3);
+		}
+		to{
+			transform: translate($x4, $y4);
+		}
+	}
+
+}

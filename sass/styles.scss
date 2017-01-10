@@ -7,6 +7,13 @@
 @import "partials/mixins";
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
 
+body {
+	display : flex;
+	justify-content : center;
+	flex-direction : column;
+	align-items : center;
+}
+
 // button styling
 %btn{
 	position: absolute;
@@ -100,13 +107,6 @@
 	width : 100vw;
 	height: 100vh;
 }
-
-
-
-
-
-
-
 //Animations
 
 @keyframes pink {
@@ -122,4 +122,115 @@
 	50% {
 		transform : translateX(-$DISTANCE);
 	}
+}
+
+//Loader
+
+%circle {
+	width : $DIAM;
+	height: $DIAM;
+	display : block;
+	border-radius : 100%;
+}
+
+.loader{
+	background : #e3e3e3;
+	display : flex;
+	justify-content : center;
+	align-items : center;
+	width : 400px;
+	height: 400px;
+}
+
+.red{
+	@extend %circle;
+	background : $pink;
+	margin : 1em;
+	@include move(1.75em, 1.75em, 1.75em, 0, 0, 0, 0, 1.75em);
+}
+.green{
+	@extend %circle;
+	background : $blue;
+	margin : 1em;
+	@include move(1.75em, 0, 0, 0, 0, 1.75em, 1.75em, 1.75em);
+	animation : move 2s ease-in-out infinite;
+}
+.yellow{
+	@extend %circle;
+	background : $lightgreen;
+	margin : 1em .5em;
+	@include move(0, 0, 0, 1.75em, 1.75em, 1.75em, 1.75em, 0);
+}
+.cyan{
+	@extend %circle;
+	background : $darkgreen;
+	margin : 1em .5em;
+	@include move(0, 1.75em, 1.75em, 1.75em, 0, 0, 0, 0);
+}
+
+// Heart styling
+
+.viewport {
+	background-color : $background;
+	height : 500px;
+	width : 500px;
+	display : flex;
+	justify-content : center;
+	flex-direction : column;
+	align-items : center;
+	margin : 10% 0 10% 0;
+}
+
+.viewport:before, .viewport:after {
+	content : "";
+	position : absolute;
+	left : 600px;
+	top : 950px;
+	display : inline-block;
+	width : 70px;
+	height : 115px;
+	background-color : $red;
+	border-radius : 50px 50px 0 0;
+	-webkit-border-radius : 50px 50px 0 0;
+	-moz-border-radius : 50px 50px 0 0;
+	-o-border-radius : 50px 50px 0 0;
+	transform : rotate(-45deg);
+}
+
+.viewport:after {
+	content : "";
+	position : absolute;
+	left : 633px;
+	top : 950px;
+	display : inline-block;
+	width : 70px;
+	height : 115px;
+	background-color : $red;
+	border-radius : 50px 50px 0 0;
+	-webkit-border-radius : 50px 50px 0 0;
+	-moz-border-radius : 50px 50px 0 0;
+	-o-border-radius : 50px 50px 0 0;
+	transform : rotate(45deg);
+}
+
+@keyframes beat {
+	25% {
+		width : 90px;
+		height : 125px;
+		border-radius : 65px 65px 0 0;
+	}
+	75%{
+		width : 120px;
+		height : 155px;
+		border-radius : 95px 95px 0 0;
+		// background-color : #e3e3e3;
+	}
+	// 100% {
+	// 	width : 20%;
+	// 	height : 20%;
+	// }
+}
+
+.viewport:before, .viewport:after {
+	animation : beat .9s ease-in-out infinite;
 }
